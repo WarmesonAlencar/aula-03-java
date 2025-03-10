@@ -1,0 +1,36 @@
+package condicao;
+
+import java.util.Scanner;
+
+public class ElseIfTest {
+
+	public static void main(String args[]) { // Para uma classe ser executada é necessário o método main
+		Scanner input;
+		input= new Scanner(System.in);
+		ElseIf obj;
+		obj= new ElseIf();
+		System.out.print("Digite a nota do aluno:");
+		int notaAluno= input.nextInt();
+		String out= obj.verificarNota(notaAluno);
+		System.out.println(out);
+		
+		System.out.print("Digite o primeiro valor:");
+		double numero1= input.nextDouble();
+		System.out.print("Digite o segundo valor:");
+		double numero2= input.nextDouble();
+		System.out.print("Digite o operador:");
+		char operador= input.next().charAt(0);
+		double resultCalculo= obj.calcular(numero1, numero2, operador);
+		
+		int resultadoInt= obj.calcularInt((int)numero1, (int)numero2, operador);
+		
+		if(resultCalculo!=-99999) {
+		System.out.printf("O resultado ponto flutuante é: %.2f\n ", resultCalculo);
+		}
+		if(resultadoInt !=-99999) {
+			System.out.printf("O resultado inteiro é: %d", resultadoInt);
+		}
+		
+		input.close();
+	}//fim main
+}//fim class
